@@ -1,0 +1,195 @@
+
+{% extends "Home.html" %}
+
+	{% block content %}
+
+		<h3 class="heading text-primary">CIC Intrusion Dataset</h3>
+		<form id="frm" name="frm" method="post" action="/ProcessDatasetInfo" enctype="multipart/form-data">
+			
+            <div class="text-center">
+				<button type="submit" class="btn btn-outline-primary btn-sm col-sm-1">Generate</button>
+			</div>
+    
+    
+
+		</form>
+		{% if displayResult == True %}
+		<div class="text-center">
+			
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th scope='col'>Destination Port</th>
+                    <th scope='col'>Flow Duration</th>
+                    <th scope='col'>Total Fwd Packets</th>
+                    <th scope='col'>Total Backward Packets</th>
+                    <th scope='col'>Total Length of Fwd Packets</th>
+                    <th scope='col'>Total Length of Bwd Packets</th>
+                    <th scope='col'>Fwd Packet Length Max</th>
+                    <th scope='col'>Fwd Packet Length Min</th>
+                    <th scope='col'>Fwd Packet Length Mean</th>
+                    <th scope='col'>Fwd Packet Length Std</th>
+                    <th scope='col'>Bwd Packet Length Max</th>
+                    <th scope='col'>Bwd Packet Length Min</th>
+                    <th scope='col'>Bwd Packet Length Mean</th>
+                    <th scope='col'>Bwd Packet Length Std</th>
+                    <th scope='col'>Flow Bytes/s</th>
+                    <th scope='col'>Flow Packets/s</th>
+                    <th scope='col'>Flow IAT Mean</th>
+                    <th scope='col'>Flow IAT Std</th>
+                    <th scope='col'>Flow IAT Max</th>
+                    <th scope='col'>Flow IAT Min</th>
+                    <th scope='col'>Fwd IAT Total</th>
+                    <th scope='col'>Fwd IAT Mean</th>
+                    <th scope='col'>Fwd IAT Std</th>
+                    <th scope='col'>Fwd IAT Max</th>
+                    <th scope='col'>Fwd IAT Min</th>
+                    <th scope='col'>Bwd IAT Total</th>
+                    <th scope='col'>Bwd IAT Mean</th>
+                    <th scope='col'>Bwd IAT Std</th>
+                    <th scope='col'>Bwd IAT Max</th>
+                    <th scope='col'>Bwd IAT Min</th>
+                    <th scope='col'>Fwd PSH Flags</th>
+                    <th scope='col'>Bwd PSH Flags</th>
+                    <th scope='col'>Fwd URG Flags</th>
+                    <th scope='col'>Bwd URG Flags</th>
+                    <th scope='col'>Fwd Header Length</th>
+                    <th scope='col'>Bwd Header Length</th>
+                    <th scope='col'>Fwd Packets/s</th>
+                    <th scope='col'>Bwd Packets/s</th>
+                    <th scope='col'>Min Packet Length</th>
+                    <th scope='col'>Max Packet Length</th>
+                    <th scope='col'>Packet Length Mean</th>
+                    <th scope='col'>Packet Length Std</th>
+                    <th scope='col'>Packet Length Variance</th>
+                    <th scope='col'>FIN Flag Count</th>
+                    <th scope='col'>SYN Flag Count</th>
+                    <th scope='col'>RST Flag Count</th>
+                    <th scope='col'>PSH Flag Count</th>
+                    <th scope='col'>ACK Flag Count</th>
+                    <th scope='col'>URG Flag Count</th>
+                    <th scope='col'>CWE Flag Count</th>
+                    <th scope='col'>ECE Flag Count</th>
+                    <th scope='col'>Down/Up Ratio</th>
+                    <th scope='col'>Average Packet Size</th>
+                    <th scope='col'>Avg Fwd Segment Size</th>
+                    <th scope='col'>Avg Bwd Segment Size</th>
+                    <th scope='col'>Fwd Header Length.1</th>
+                    <th scope='col'>Fwd Avg Bytes/Bulk</th>
+                    <th scope='col'>Fwd Avg Packets/Bulk</th>
+                    <th scope='col'>Fwd Avg Bulk Rate</th>
+                    <th scope='col'>Bwd Avg Bytes/Bulk</th>
+                    <th scope='col'>Bwd Avg Packets/Bulk</th>
+                    <th scope='col'>Bwd Avg Bulk Rate</th>
+                    <th scope='col'>Subflow Fwd Packets</th>
+                    <th scope='col'>Subflow Fwd Bytes</th>
+                    <th scope='col'>Subflow Bwd Packets</th>
+                    <th scope='col'>Subflow Bwd Bytes</th>
+                    <th scope='col'>Init_Win_bytes_forward</th>
+                    <th scope='col'>Init_Win_bytes_backward</th>
+                    <th scope='col'>act_data_pkt_fwd</th>
+                    <th scope='col'>min_seg_size_forward</th>
+                    <th scope='col'>Active Mean</th>
+                    <th scope='col'>Active Std</th>
+                    <th scope='col'>Active Max</th>
+                    <th scope='col'>Active Min</th>
+                    <th scope='col'>Idle Mean</th>
+                    <th scope='col'>Idle Std</th>
+                    <th scope='col'>Idle Max</th>
+                    <th scope='col'>Idle Min</th>
+                    <th scope='col'>Label</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for key,value in records.iterrows() %}
+                    <tr>
+                        <td>{{ value["Destination Port"]  }}</td>
+<td>{{ value["Flow Duration"]  }}</td>
+<td>{{ value["Total Fwd Packets"]  }}</td>
+<td>{{ value["Total Backward Packets"]  }}</td>
+<td>{{ value["Total Length of Fwd Packets"]  }}</td>
+<td>{{ value["Total Length of Bwd Packets"]  }}</td>
+<td>{{ value["Fwd Packet Length Max"]  }}</td>
+<td>{{ value["Fwd Packet Length Min"]  }}</td>
+<td>{{ value["Fwd Packet Length Mean"]  }}</td>
+<td>{{ value["Fwd Packet Length Std"]  }}</td>
+<td>{{ value["Bwd Packet Length Max"]  }}</td>
+<td>{{ value["Bwd Packet Length Min"]  }}</td>
+<td>{{ value["Bwd Packet Length Mean"]  }}</td>
+<td>{{ value["Bwd Packet Length Std"]  }}</td>
+<td>{{ value["Flow Bytes/s"]  }}</td>
+<td>{{ value["Flow Packets/s"]  }}</td>
+<td>{{ value["Flow IAT Mean"]  }}</td>
+<td>{{ value["Flow IAT Std"]  }}</td>
+<td>{{ value["Flow IAT Max"]  }}</td>
+<td>{{ value["Flow IAT Min"]  }}</td>
+<td>{{ value["Fwd IAT Total"]  }}</td>
+<td>{{ value["Fwd IAT Mean"]  }}</td>
+<td>{{ value["Fwd IAT Std"]  }}</td>
+<td>{{ value["Fwd IAT Max"]  }}</td>
+<td>{{ value["Fwd IAT Min"]  }}</td>
+<td>{{ value["Bwd IAT Total"]  }}</td>
+<td>{{ value["Bwd IAT Mean"]  }}</td>
+<td>{{ value["Bwd IAT Std"]  }}</td>
+<td>{{ value["Bwd IAT Max"]  }}</td>
+<td>{{ value["Bwd IAT Min"]  }}</td>
+<td>{{ value["Fwd PSH Flags"]  }}</td>
+<td>{{ value["Bwd PSH Flags"]  }}</td>
+<td>{{ value["Fwd URG Flags"]  }}</td>
+<td>{{ value["Bwd URG Flags"]  }}</td>
+<td>{{ value["Fwd Header Length"]  }}</td>
+<td>{{ value["Bwd Header Length"]  }}</td>
+<td>{{ value["Fwd Packets/s"]  }}</td>
+<td>{{ value["Bwd Packets/s"]  }}</td>
+<td>{{ value["Min Packet Length"]  }}</td>
+<td>{{ value["Max Packet Length"]  }}</td>
+<td>{{ value["Packet Length Mean"]  }}</td>
+<td>{{ value["Packet Length Std"]  }}</td>
+<td>{{ value["Packet Length Variance"]  }}</td>
+<td>{{ value["FIN Flag Count"]  }}</td>
+<td>{{ value["SYN Flag Count"]  }}</td>
+<td>{{ value["RST Flag Count"]  }}</td>
+<td>{{ value["PSH Flag Count"]  }}</td>
+<td>{{ value["ACK Flag Count"]  }}</td>
+<td>{{ value["URG Flag Count"]  }}</td>
+<td>{{ value["CWE Flag Count"]  }}</td>
+<td>{{ value["ECE Flag Count"]  }}</td>
+<td>{{ value["Down/Up Ratio"]  }}</td>
+<td>{{ value["Average Packet Size"]  }}</td>
+<td>{{ value["Avg Fwd Segment Size"]  }}</td>
+<td>{{ value["Avg Bwd Segment Size"]  }}</td>
+<td>{{ value["Fwd Header Length.1"]  }}</td>
+<td>{{ value["Fwd Avg Bytes/Bulk"]  }}</td>
+<td>{{ value["Fwd Avg Packets/Bulk"]  }}</td>
+<td>{{ value["Fwd Avg Bulk Rate"]  }}</td>
+<td>{{ value["Bwd Avg Bytes/Bulk"]  }}</td>
+<td>{{ value["Bwd Avg Packets/Bulk"]  }}</td>
+<td>{{ value["Bwd Avg Bulk Rate"]  }}</td>
+<td>{{ value["Subflow Fwd Packets"]  }}</td>
+<td>{{ value["Subflow Fwd Bytes"]  }}</td>
+<td>{{ value["Subflow Bwd Packets"]  }}</td>
+<td>{{ value["Subflow Bwd Bytes"]  }}</td>
+<td>{{ value["Init_Win_bytes_forward"]  }}</td>
+<td>{{ value["Init_Win_bytes_backward"]  }}</td>
+<td>{{ value["act_data_pkt_fwd"]  }}</td>
+<td>{{ value["min_seg_size_forward"]  }}</td>
+<td>{{ value["Active Mean"]  }}</td>
+<td>{{ value["Active Std"]  }}</td>
+<td>{{ value["Active Max"]  }}</td>
+<td>{{ value["Active Min"]  }}</td>
+<td>{{ value["Idle Mean"]  }}</td>
+<td>{{ value["Idle Std"]  }}</td>
+<td>{{ value["Idle Max"]  }}</td>
+<td>{{ value["Idle Min"]  }}</td>
+<td>{{ value["Label"]  }}</td>
+                    </tr>
+                {% endfor %}
+               </tbody>
+            </table>
+    
+		</div>
+
+    	{% endif %}
+    
+{% endblock %}
+    

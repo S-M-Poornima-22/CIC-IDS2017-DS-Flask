@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Final Year Project</title>
+    <link rel="stylesheet" href="https://scientias.in/unsqp/css/WisenStyle.min.css?m=1">
+</head>
+
+    <body class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#"><img src="https://scientias.in/unsqp/A0017/logo.svg" style="width:70px;height:70px"/></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+        
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+
+				
+					
+                    <li class="nav-item active">
+				        <a class="nav-link" href="/DatasetInfo">CIC Intrusion Dataset</a>
+			        </li>
+
+
+                    <li class="nav-item active">
+				        <a class="nav-link" href="/Statistics">Dataset Statistics</a>
+			        </li>
+
+
+                    <li class="nav-item active">
+				        <a class="nav-link" href="/Metadata">Dataset Metadata</a>
+			        </li>
+
+
+                    <li class="nav-item active">
+				        <a class="nav-link" href="/DataPreprocessing">Data Preprocessing</a>
+			        </li>
+
+
+                    <li class="nav-item active">
+				        <a class="nav-link" href="/ClassCount">Label Count</a>
+			        </li>
+
+
+
+
+                    <li class="nav-item active">
+				        <a class="nav-link" href="/Prediction">Prediction</a>
+			        </li>
+
+
+                    <li class="nav-item active">
+				        <a class="nav-link" href="/ModelPerformance">Model Performance</a>
+			        </li>
+
+
+				
+					<li class="nav-item">
+						<a class="nav-link" href="/">Logout</a>
+					</li>
+				</ul>
+			</div>
+        </nav>
+        <br/>
+        <div class="content container">
+            {%  block content %}
+            
+            {% endblock  %}
+            <div class="mt-5 pt-5"></div>
+        </div>
+    </body>
+
+</html>
+
+                

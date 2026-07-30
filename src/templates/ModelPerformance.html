@@ -1,0 +1,26 @@
+
+{% extends "Home.html" %}
+
+	{% block content %}
+
+		<h3 class="heading text-primary">Model Performance</h3>
+		<form id="frm" name="frm" method="post" action="/ProcessModelPerformance" enctype="multipart/form-data">
+			
+            <div class="text-center">
+				<button type="submit" class="btn btn-outline-primary btn-sm col-sm-1">Generate</button>
+			</div>
+    
+    
+
+		</form>
+		{% if displayResult == True %}
+		<div class="text-center">
+			<h3>Auto Encoder Decoder Model Performance</h3>
+            <img class="img-fluid" src="static/Output/Training-Validation-Accuracy.png" />
+			<img class="img-fluid" src="static/Output/Training-Validation-Loss.png" />
+		</div>
+
+    	{% endif %}
+    
+{% endblock %}
+    

@@ -1,0 +1,63 @@
+
+{% extends "Home.html" %}
+
+	{% block content %}
+
+		<h3 class="heading text-primary">Data Preprocessing</h3>
+		<form id="frm" name="frm" method="post" action="/ProcessDataPreprocessing" enctype="multipart/form-data">
+			
+            <div class="text-center">
+				<button type="submit" class="btn btn-outline-primary btn-sm col-sm-1">Generate</button>
+			</div>
+    
+    
+
+		</form>
+		{% if displayResult == True %}
+		<div class="text-center">
+			<table class="table table-bordered table-striped">
+              <tbody>
+                <tr>
+					<td class="cellbg w50perc" >No of Rows in Original Dataset</td>
+					<td class="w50perc">{{original_shape[0]}}</td>
+				</tr>
+			  	<tr>
+					<td class="cellbg">No of Columns in Original Dataset</td>
+					<td>{{original_shape[0]}}</td>
+				</tr>
+			  <tr>
+					<td class="cellbg" >No of Duplicated Samples</td>
+					<td class="w50perc">{{duplicated_rows}}</td>
+				</tr>
+			  	<tr>
+					<td class="cellbg" >No of Rows in Cleaned Dataset</td>
+					<td class="w50perc">{{cleaned_shape[0]}}</td>
+				</tr>
+			  	<tr>
+					<td class="cellbg">No of Columns in Cleaned Dataset</td>
+					<td>{{cleaned_shape[0]}}</td>
+				</tr>
+               </tbody>
+            </table>
+			<h3 class="text-center bg-info text-dark  py-3">Missing Data Information</h3>
+			<table class="table table-bordered table-striped mt-3 mx-auto">
+              <thead>
+                <tr>
+                  <th scope="col" style="width:20%">Column Name</th>
+                  <th scope="col"  style="width:10%">No of Missing Samples</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for index,value in missing_data.items() %}
+                    <tr>
+                        <td>{{ index  }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                {% endfor %}
+               </tbody>
+            </table>
+		</div>
+    	{% endif %}
+    
+{% endblock %}
+    

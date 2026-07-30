@@ -1,0 +1,26 @@
+
+{% extends "Home.html" %}
+
+	{% block content %}
+
+		<h3 class="heading text-primary">Recursive Feature Elimination</h3>
+		<form id="frm" name="frm" method="post" action="/ProcessRecursiveFeatureElimination" enctype="multipart/form-data">
+			
+            <div class="text-center">
+				<button type="submit" class="btn btn-outline-primary btn-sm col-sm-1">Generate</button>
+			</div>
+    
+    
+
+		</form>
+		{% if displayResult == True %}
+		<div class="text-center">
+			
+            <img class="img-fluid" src="static/Output/RecursiveFeatureElimination.png" /> 
+
+		</div>
+
+    	{% endif %}
+    
+{% endblock %}
+    

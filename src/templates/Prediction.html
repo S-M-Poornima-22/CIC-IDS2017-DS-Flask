@@ -1,0 +1,89 @@
+
+{% extends "Home.html" %}
+
+	{% block content %}
+
+		<h3 class="heading text-primary">Prediction</h3>
+		<form id="frm" name="frm" method="post" action="/ProcessPrediction" enctype="multipart/form-data">
+			
+            <div class="form-group row m-2">
+                <label for="DestinationPort" class="col-sm-2 col-form-label">Destination Port</label>
+                <div class="col-sm-4">
+                    <input type="number" class="form-control" name="DestinationPort" id="DestinationPort" step='0.01' value="{{DestinationPort}}">
+                </div>
+                <label for="FlowDuration" class="col-sm-2 col-form-label">Flow Duration </label>
+                <div class="col-sm-4">
+                    <input type="number" class="form-control" name="FlowDuration" id="FlowDuration" step='0.01' value="{{FlowDuration}}">
+                </div>
+            </div>
+            <div class="form-group row m-2">
+                <label for="TotalFwdPackets" class="col-sm-2 col-form-label">Total Fwd Packets</label>
+                <div class="col-sm-4">
+                    <input type="number" class="form-control" name="TotalFwdPackets" id="TotalFwdPackets" step='0.01' value="{{TotalFwdPackets}}">
+                </div>
+                <label for="TotalBackwardPackets" class="col-sm-2 col-form-label">Total Backward Packets </label>
+                <div class="col-sm-4">
+                    <input type="number" class="form-control" name="TotalBackwardPackets" id="TotalBackwardPackets" step='0.01' value="{{TotalBackwardPackets}}">
+                </div>
+            </div>
+            <div class="form-group row m-2">
+                <label for="TotalLengthofFwdPackets" class="col-sm-2 col-form-label">Total Length of Fwd Packets		</label>
+                <div class="col-sm-4">
+                    <input type="number" class="form-control" name="TotalLengthofFwdPackets" id="TotalLengthofFwdPackets" step='0.01' value="{{TotalLengthofFwdPackets}}">
+                </div>
+                <label for="TotalLengthofBwdPackets" class="col-sm-2 col-form-label">Total Length of Bwd Packets </label>
+                <div class="col-sm-4">
+                    <input type="number" class="form-control" name="TotalLengthofBwdPackets" id="TotalLengthofBwdPackets" step='0.01' value="{{TotalLengthofBwdPackets}}">
+                </div>
+            </div>
+            <div class="form-group row m-2">
+                <label for="SubflowFwdPackets" class="col-sm-2 col-form-label">Subflow Fwd Packets</label>
+                <div class="col-sm-4">
+                    <input type="number" class="form-control" name="SubflowFwdPackets" id="SubflowFwdPackets" step='0.01' value="{{SubflowFwdPackets}}">
+                </div>
+                <label for="SubflowFwdBytes" class="col-sm-2 col-form-label">Subflow Fwd Bytes	 </label>
+                <div class="col-sm-4">
+                    <input type="number" class="form-control" name="SubflowFwdBytes" id="SubflowFwdBytes" step='0.01' value="{{SubflowFwdBytes}}">
+                </div>
+            </div>
+            <div class="form-group row m-2">
+                <label for="SubflowBwdPackets" class="col-sm-2 col-form-label">Subflow Bwd Packets</label>
+                <div class="col-sm-4">
+                    <input type="number" class="form-control" name="SubflowBwdPackets" id="SubflowBwdPackets" step='0.01' value="{{SubflowBwdPackets}}">
+                </div>
+                <label for="SubflowBwdBytes" class="col-sm-2 col-form-label">Subflow Bwd Bytes </label>
+                <div class="col-sm-4">
+                    <input type="number" class="form-control" name="SubflowBwdBytes" id="SubflowBwdBytes" step='0.01' value="{{SubflowBwdBytes}}">
+                </div>
+            </div>
+            <div class="form-group row m-2">
+                <label for="Init_Win_bytes_backward" class="col-sm-2 col-form-label">Init Win Bytes Backward</label>
+                <div class="col-sm-4">
+                    <input type="number" class="form-control" name="Init_Win_bytes_backward" id="Init_Win_bytes_backward" step='0.01' value="{{Init_Win_bytes_backward}}">
+                </div>
+                <label for="act_data_pkt_fwd" class="col-sm-2 col-form-label">Act Data Pkt Fwd </label>
+                <div class="col-sm-4">
+                    <input type="number" class="form-control" name="act_data_pkt_fwd" id="act_data_pkt_fwd" step='0.01' value="{{act_data_pkt_fwd}}">
+                </div>
+            </div>
+            <div class="form-group row m-2">
+                <label for="min_seg_size_forward" class="col-sm-2 col-form-label">Min Seg Size Forward</label>
+                <div class="col-sm-4">
+                    <input type="number" class="form-control" name="min_seg_size_forward" id="min_seg_size_forward" step='0.01' value="{{min_seg_size_forward}}">
+                </div>
+
+
+
+            <div class="text-center ">
+				<button type="submit" class="btn btn-outline-primary btn-sm col-sm-1">Generate</button>
+			</div>
+		</form>
+		{% if displayResult == True %}
+		<div class="text-center alert alert-success mt-3">
+			{{prediction_message}}
+		</div>
+
+    	{% endif %}
+    
+{% endblock %}
+    

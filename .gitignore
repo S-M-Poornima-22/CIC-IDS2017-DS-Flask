@@ -1,0 +1,5 @@
+.idea/
+src/static/CIC-IDS2017-Dataset/
+src/static/Output/
+*.joblib
+*.csv

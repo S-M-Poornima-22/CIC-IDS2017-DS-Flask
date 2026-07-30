@@ -1,0 +1,41 @@
+
+{% extends "Home.html" %}
+
+	{% block content %}
+
+		<h3 class="heading text-primary">Dataset Metadata</h3>
+		<form id="frm" name="frm" method="post" action="/ProcessMetadata" enctype="multipart/form-data">
+			
+            <div class="text-center">
+				<button type="submit" class="btn btn-outline-primary btn-sm col-sm-1">Generate</button>
+			</div>
+    
+    
+
+		</form>
+		{% if displayResult == True %}
+		<div class="text-center">
+			
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th scope="col" style="width:20%">Column Name</th>
+                  <th scope="col"  style="width:10%">Data Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for index,value in records.items() %}
+                    <tr>
+                        <td>{{ index  }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                {% endfor %}
+               </tbody>
+            </table>
+    
+		</div>
+
+    	{% endif %}
+    
+{% endblock %}
+    
