@@ -58,7 +58,7 @@ The dataset used for studying network traffic and intrusion patterns.
 
 ### 🏠 Home
 
-![Home](screenshots/hompage.jpg)
+![Home](screenshots/homepage.jpg)
 
 
 ### 🎯 Prediction
