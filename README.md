@@ -2,7 +2,7 @@
 
 > **Turning network traffic into meaningful security insights through Machine Learning.**
 
-A Machine Learning-based **Network Intrusion Detection System** developed using the **CIC-IDS2017 dataset** to analyze network traffic and identify potential intrusion patterns.
+A Machine Learning-based **Network Intrusion Detection System** to analyze network traffic and identify potential intrusion patterns.
 
 ---
 
@@ -58,7 +58,7 @@ The dataset used for studying network traffic and intrusion patterns.
 
 ### 🏠 Home
 
-![Home](screenshots/homage.jpg)
+![Home](screenshots/hompage.jpg)
 
 
 ### 🎯 Prediction
